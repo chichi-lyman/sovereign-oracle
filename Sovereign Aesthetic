@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sovereign Oracle - Blueprint Presentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* --- CORE AESTHETICS --- */
+        :root {
+            --obsidian: #0A0A0B;
+            --gold: #D4AF37;
+            --violet-glow: rgba(45, 27, 78, 0.6);
+            --text-white: #F8F9FA;
+        }
+
+        body {
+            background-color: var(--obsidian);
+            color: var(--text-white);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 60px;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes pulse-gold {
+            0% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.2); }
+            50% { box-shadow: 0 0 30px rgba(212, 175, 55, 0.6); }
+            100% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.2); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes rotate-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* --- SLIDE CONTAINER --- */
+        .slide {
+            width: 1000px;
+            height: 600px;
+            background: radial-gradient(circle at center, #1a1a2e 0%, var(--obsidian) 80%);
+            border: 1px solid #333;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            border-radius: 8px;
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1, h2, h3 {
+            font-family: 'Cinzel Decorative', serif;
+            color: var(--gold);
+            text-align: center;
+            margin: 0;
+            z-index: 10;
+        }
+
+        h1 { font-size: 64px; text-shadow: 0 4px 10px rgba(0,0,0,0.8); }
+        h2 { font-size: 42px; margin-bottom: 20px; border-bottom: 2px solid var(--gold); padding-bottom: 10px; }
+        p { font-size: 18px; line-height: 1.6; max-width: 800px; text-align: center; color: #ccc; z-index: 10; }
+        
+        .accent-text { color: var(--gold); font-weight: bold; }
+
+        /* --- VISUAL ELEMENTS (CSS GRAPHICS) --- */
+        
+        /* The Gold Sigil */
+        .sigil-graphic {
+            width: 150px;
+            height: 150px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: pulse-gold 4s infinite;
+        }
+        .sigil-inner {
+            width: 100px;
+            height: 100px;
+            border: 1px solid var(--gold);
+            transform: rotate(45deg);
+            animation: rotate-slow 20s linear infinite;
+        }
+
+        /* The Violet Orbs */
+        .orb {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(200, 200, 255, 0.8), var(--violet-glow));
+            position: absolute;
+            filter: blur(8px);
+            opacity: 0.7;
+        }
+        
+        /* Orb Positions for Slide 1 */
+        .orb-1 { top: 20%; left: 20%; animation: float 6s ease-in-out infinite; }
+        .orb-2 { bottom: 20%; right: 20%; animation: float 7s ease-in-out infinite; animation-delay: 1s; }
+        .orb-3 { top: 20%; right: 20%; animation: float 8s ease-in-out infinite; animation-delay: 2s; }
+        .orb-4 { bottom: 20%; left: 20%; animation: float 5s ease-in-out infinite; animation-delay: 0.5s; }
+
+        /* --- LAYOUTS --- */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            width: 80%;
+            margin-top: 40px;
+            z-index: 10;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--gold);
+            padding: 20px;
+            text-align: center;
+        }
+        .card h3 { font-size: 24px; margin-bottom: 10px; font-family: 'Montserrat', sans-serif; }
+
+        .quote-box {
+            font-style: italic;
+            font-size: 28px;
+            color: var(--text-white);
+            border-left: 4px solid var(--gold);
+            padding-left: 30px;
+            margin: 40px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- SLIDE 1: TITLE -->
+    <div class="slide">
+        <!-- Background Orbs -->
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="orb orb-4"></div>
+        
+        <!-- Central Sigil -->
+        <div class="sigil-graphic">
+            <div class="sigil-inner"></div>
+        </div>
+
+        <div style="margin-top: 200px; z-index: 10;">
+            <h1>The Sovereign Oracle</h1>
+            <p style="letter-spacing: 3px; color: var(--gold); margin-top: 10px;">ARCHITECTED BY CHELSEA</p>
+            <p>A Sanctuary of Spiritual Intelligence & Legacy</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 2: THE VISION -->
+    <div class="slide">
+        <h2>The Vision</h2>
+        <p>In a world of generic noise, we provide <span class="accent-text">Scary Accurate</span> intelligence.</p>
+        <p>The Sovereign Oracle bridges ancient Pythagorean Numerology with modern 3D technology to create a digital mirror for the soul. This is not just an app; it is a legacy project built with protective integrity.</p>
+        
+        <div class="grid-3">
+            <div class="card">
+                <h3>Smart Logic</h3>
+                <p>Calculates "Soul DNA" using exact birth coordinates.</p>
+            </div>
+            <div class="card">
+                <h3>3D Sanctuary</h3>
+                <p>Immersive visual environment (Obsidian & Gold).</p>
+            </div>
+            <div class="card">
+                <h3>Legacy</h3>
+                <p>Dedicated to Mckenzie & Jaeden Lyman.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 3: THE USER JOURNEY -->
+    <div class="slide">
+        <h2>The User Journey</h2>
+        <div style="display: flex; gap: 40px; margin-top: 40px; align-items: center; z-index: 10;">
+            
+            <div style="text-align: center;">
+                <div style="width: 50px; height: 50px; border: 2px solid var(--gold); border-radius: 50%; line-height: 50px; margin: 0 auto 10px; color: var(--gold); font-weight: bold;">1</div>
+                <p style="font-size: 14px;">ENTRY<br>Name & Birthdate</p>
+            </div>
+
+            <div style="width: 100px; height: 2px; background: var(--gold);"></div>
+
+            <div style="text-align: center;">
+                <div style="width: 50px; height: 50px; border: 2px solid var(--gold); border-radius: 50%; line-height: 50px; margin: 0 auto 10px; color: var(--gold); font-weight: bold;">2</div>
+                <p style="font-size: 14px;">REVEAL<br>Instant Soul DNA</p>
+            </div>
+
+            <div style="width: 100px; height: 2px; background: var(--gold);"></div>
+
+            <div style="text-align: center;">
+                <div style="width: 50px; height: 50px; border: 2px solid var(--gold); border-radius: 50%; line-height: 50px; margin: 0 auto 10px; color: var(--gold); font-weight: bold;">3</div>
+                <p style="font-size: 14px;">GIFT<br>60-Page Map</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SLIDE 4: THE LEGACY -->
+    <div class="slide">
+        <div class="orb orb-1"></div>
+        <div class="quote-box">
+            "I built this with the same protective ferocity and integrity I hold for my children, Mckenzie & Jaeden."
+        </div>
+        <p style="color: var(--gold); font-weight: bold;">— CHELSEA, THE ARCHITECT</p>
+    </div>
+
+    <!-- SLIDE 5: LAUNCH 2026 -->
+    <div class="slide">
+        <div class="sigil-graphic" style="width: 300px; height: 300px; opacity: 0.1;"></div>
+        <h1>2026</h1>
+        <p>THE GATE OPENS</p>
+        <div style="margin-top: 20px; border: 1px solid var(--gold); padding: 10px 40px; color: var(--gold);">
+            THE SOVEREIGN ORACLE
+        </div>
+    </div>
+
+</body>
+</html>
+```
